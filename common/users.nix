@@ -31,7 +31,10 @@
         {name = "Michael Ertl";}
         {name = "Luis Feulner";}
         {name = "Tobias Stauber";}
-        {name = "Bastian Reich";}
+        {
+          name = "Bastian Reich";
+          sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJesDAbM93JVSKtYrk5b5MN/idRU2nIeD5WHDjwFpwGX bastian.reich@eposte.de";
+        }
         {
           name = "Xaver Oswald";
           sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtVH4zdklVJpw2Czvu+bZAmvuwpuzh9dxok9P6oUU/J";
