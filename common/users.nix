@@ -9,11 +9,15 @@
         name = "u_" + (builtins.elemAt (builtins.split " " v.name) 2 |> builtins.substring 0 4 |> lib.strings.toLower);
       in {
         inherit name;
-        value = {
-          isNormalUser = true;
-          uid = 10000 + i;
-          openssh.authorizedKeys.keys = lib.optional (v ? sshKey) v.sshKey;
-        };
+        value =
+          {
+            isNormalUser = true;
+            uid = 10000 + i;
+            openssh.authorizedKeys.keys = v.sshKeys or [];
+          }
+          // lib.optionalAttrs (v ? group) {
+            inherit (v) group;
+          };
       }) [
         {name = "Malte Verhoeff";}
         {name = "Robert Zeitter";}
@@ -33,11 +37,13 @@
         {name = "Tobias Stauber";}
         {
           name = "Bastian Reich";
-          sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJesDAbM93JVSKtYrk5b5MN/idRU2nIeD5WHDjwFpwGX bastian.reich@eposte.de";
+          group = "wheel";
+          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJesDAbM93JVSKtYrk5b5MN/idRU2nIeD5WHDjwFpwGX bastian.reich@eposte.de"];
         }
         {
           name = "Xaver Oswald";
-          sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtVH4zdklVJpw2Czvu+bZAmvuwpuzh9dxok9P6oUU/J";
+          group = "wheel";
+          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtVH4zdklVJpw2Czvu+bZAmvuwpuzh9dxok9P6oUU/J"];
         }
       ]);
 }
