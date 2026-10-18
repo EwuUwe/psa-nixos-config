@@ -9,6 +9,12 @@
     forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     nixosConfigurations = {
+      vmpsateam09-01 = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./vmpsateam09-01/configuration.nix
+          ./common
+        ];
+      };
       vmpsateam09-02 = nixpkgs.lib.nixosSystem {
         modules = [./vmpsateam09-02/configuration.nix ./common];
       };
