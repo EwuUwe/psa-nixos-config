@@ -54,7 +54,10 @@
           sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIBaeqU5at9QgIAhBxlXZjBhvSg9WdKbBao89r4NwqJvP richard@LAPTOP-DULOAERK"];
         }
         {name = "Michael Ertl";}
-        {name = "Luis Feulner";}
+        {
+          name = "Luis Feulner";
+          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAhdVtg2TdDN7sjELDYOof3Dk7bTy4tLIrZJUioDYNnt"];
+        }
         {
           name = "Tobias Stauber";
           sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIOaoX7FmojjjQk/AqolVsr20m/Uo9DiWQFnV1xD+CBXc"];
@@ -67,7 +70,10 @@
         {
           name = "Xaver Oswald";
           group = "wheel";
-          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtVH4zdklVJpw2Czvu+bZAmvuwpuzh9dxok9P6oUU/J"];
+          sshKeys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtVH4zdklVJpw2Czvu+bZAmvuwpuzh9dxok9P6oUU/J"
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF5N4yzSh0MIfUAU1whb3ptr00WAXEQtr+kKhiGHu7EN"
+          ];
         }
       ]);
 }
