@@ -36,6 +36,19 @@
       };
     };
 
+    devShells = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        default = pkgs.mkShell {
+          packages = [
+            pkgs.sops
+            pkgs.gnumake
+          ];
+        };
+      }
+    );
+
     formatter = forAllSystems (
       system:
         nixpkgs.legacyPackages.${system}.alejandra
