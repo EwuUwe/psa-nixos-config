@@ -48,7 +48,10 @@
           sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIH4lohQS8EWFcPnz8JA9EfFhXEYwH/3ucDyEH6OnkrC0 jonas@nixos-desktop"];
         }
         {name = "Leopold Cario";}
-        {name = "Michael Jurcenko";}
+        {
+          name = "Michael Jurcenko";
+          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF/yYMD3bsYlHGRgevu3oyT/JZyPSSsfUTftZKnAVQm6 go98tuz@tum.de"];
+        }
         {name = "Hosan Lee";}
         {name = "Carol Stefan";}
         {name = "Amine haddad";}
@@ -65,7 +68,10 @@
           name = "Richard Magula";
           sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIBaeqU5at9QgIAhBxlXZjBhvSg9WdKbBao89r4NwqJvP richard@LAPTOP-DULOAERK"];
         }
-        {name = "Michael Ertl";}
+        {
+          name = "Michael Ertl";
+          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILPihIybh9XJQzjRqVq6BNJd8XQVwwnxmwsZBfMBfJYS go79bug@mytum.de"];
+        }
         {
           name = "Luis Feulner";
           sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAhdVtg2TdDN7sjELDYOof3Dk7bTy4tLIrZJUioDYNnt"];
