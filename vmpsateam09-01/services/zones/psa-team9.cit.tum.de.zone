@@ -1,0 +1,35 @@
+$TTL 86400
+@ IN SOA ns.psa-team9.cit.tum.de. root.psa-team9.cit.tum.de. (
+    2026103001 ; Serial (YYYYMMDDNN)
+    7200       ; Refresh (2 hours)
+    3600       ; Retry (1 hour)
+    1209600    ; Expire (2 weeks)
+    3600       ; Negative Cache TTL (1 hour)
+)
+
+; Nameservers: primary (Team 9) and secondaries (neighboring Team 8 and Team 1)
+@                   IN  NS      ns.psa-team9.cit.tum.de.
+@                   IN  NS      ns.psa-team8.cit.tum.de.
+@                   IN  NS      ns.psa-team1.cit.tum.de.
+
+; Apex and standard services
+@                   IN  A       192.168.9.1
+ns                  IN  A       192.168.9.1
+router              IN  A       192.168.9.1
+dhcp                IN  A       192.168.9.1
+
+; VMs
+vmpsateam09-01      IN  A       192.168.9.1
+vmpsateam09-02      IN  A       192.168.9.2
+vmpsateam9-01       IN  A       192.168.9.1
+vmpsateam9-02       IN  A       192.168.9.2
+
+; Active transit interfaces on router (vmpsateam09-01)
+transit-team1       IN  A       192.168.91.1
+transit-team2       IN  A       192.168.92.1
+transit-team3       IN  A       192.168.93.1
+transit-team4       IN  A       192.168.94.1
+transit-team5       IN  A       192.168.95.1
+transit-team6       IN  A       192.168.96.1
+transit-team7       IN  A       192.168.97.1
+transit-team8       IN  A       192.168.98.1
