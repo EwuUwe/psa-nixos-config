@@ -1,6 +1,7 @@
 _: {
   imports = [
     ./bootloader.nix
+    ./firewall.nix
     ./networking.nix
     ./nix.nix
     ./oomd.nix
