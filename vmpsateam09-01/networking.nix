@@ -27,5 +27,10 @@
     };
   };
 
-  boot.kernel.sysctl."net.ipv4.ip_forward" = true;
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = true;
+    "net.ipv4.conf.default.send_redirects" = false;
+    "net.ipv4.conf.enp0s3.send_redirects" = false;
+    "net.ipv4.conf.enp0s8.send_redirects" = false;
+  };
 }
