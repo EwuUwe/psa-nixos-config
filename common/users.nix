@@ -6,7 +6,7 @@
       };
     }
     // builtins.listToAttrs (lib.imap0 (i: v: let
-        name = "u_" + (builtins.elemAt (builtins.split " " v.name) 2 |> builtins.substring 0 4 |> lib.strings.toLower);
+        name = "u_" + (builtins.elemAt (builtins.split " " v.name) 0 |> builtins.substring 0 1 |> lib.strings.toLower) + (builtins.elemAt (builtins.split " " v.name) 2 |> builtins.substring 0 5 |> lib.strings.toLower);
       in {
         inherit name;
         value =
@@ -19,22 +19,46 @@
             inherit (v) group;
           };
       }) [
-        {name = "Malte Verhoeff";}
-        {name = "Robert Zeitter";}
-        {name = "Helen Krebs";}
-        {name = "Jonas Reinstaedtler";}
+        {
+          name = "Malte Verhoeff";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIIgTXg1vlQHqmXrLMMTaBQDOX1fsSZIRQ2bSkFSvwePF go76dep@psa.in.tum.de"];
+        }
+        {
+          name = "Robert Zeitter";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIIFL7wTyasJrntnwrFomWbMUf8Jm/66RWlKa5ysZkDLW"];
+        }
+        {
+          name = "Helen Krebs";
+          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFKygI5jH8V35uxaT/uRcEBJN2coyzDbf8awrVUegUU5 helenkrebs@MacBook-Air-von-Helen.local"];
+        }
+        {
+          name = "Jonas Reinstaedtler";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIH4lohQS8EWFcPnz8JA9EfFhXEYwH/3ucDyEH6OnkrC0 jonas@nixos-desktop"];
+        }
         {name = "Leopold Cario";}
         {name = "Michael Jurcenko";}
         {name = "Hosan Lee";}
         {name = "Carol Stefan";}
         {name = "Amine haddad";}
         {name = "Ahmed Amine Loukil";}
-        {name = "Julius Rehbein";}
-        {name = "Tim Adamczewski";}
-        {name = "Richard Magula";}
+        {
+          name = "Julius Rehbein";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIDFBR5pK2IItwn2t/3KZugbcBchSpbyMBIfMb0Mi5cuL julius.rehbein@tum.de"];
+        }
+        {
+          name = "Tim Adamczewski";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIFPIf5z68ATsbOn9kEPuBTAeL+3oKZjmLB2mFLY/Hmwh tim@tim-17Z90Q-G-AA78G"];
+        }
+        {
+          name = "Richard Magula";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIBaeqU5at9QgIAhBxlXZjBhvSg9WdKbBao89r4NwqJvP richard@LAPTOP-DULOAERK"];
+        }
         {name = "Michael Ertl";}
         {name = "Luis Feulner";}
-        {name = "Tobias Stauber";}
+        {
+          name = "Tobias Stauber";
+          sshKeys = ["AAAAC3NzaC1lZDI1NTE5AAAAIOaoX7FmojjjQk/AqolVsr20m/Uo9DiWQFnV1xD+CBXc"];
+        }
         {
           name = "Bastian Reich";
           group = "wheel";
