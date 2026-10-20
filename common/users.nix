@@ -1,4 +1,13 @@
-{lib, ...}: {
+{
+  lib,
+  config,
+  ...
+}: {
+  sops.secrets = {
+    "hashed_passwords/xaver".neededForUsers = true;
+    "hashed_passwords/basti".neededForUsers = true;
+  };
+
   users.users =
     {
       "root" = {
@@ -17,6 +26,9 @@
           }
           // lib.optionalAttrs (v ? group) {
             inherit (v) group;
+          }
+          // lib.optionalAttrs (v ? hashedPasswordFile) {
+            inherit (v) hashedPasswordFile;
           };
       }) [
         {
@@ -65,6 +77,7 @@
         {
           name = "Bastian Reich";
           group = "wheel";
+          hashedPasswordFile = config.sops.secrets."hashed_passwords/basti".path;
           sshKeys = [
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJesDAbM93JVSKtYrk5b5MN/idRU2nIeD5WHDjwFpwGX bastian.reich@eposte.de"
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOszEkR9pYaB+Dv6EG6T8rZZWaaeNOoV1k4IanNWwp0+ bastian.reich@eposte.de"
@@ -73,6 +86,7 @@
         {
           name = "Xaver Oswald";
           group = "wheel";
+          hashedPasswordFile = config.sops.secrets."hashed_passwords/xaver".path;
           sshKeys = [
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtVH4zdklVJpw2Czvu+bZAmvuwpuzh9dxok9P6oUU/J"
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF5N4yzSh0MIfUAU1whb3ptr00WAXEQtr+kKhiGHu7EN"

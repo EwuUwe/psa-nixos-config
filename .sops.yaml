@@ -1,0 +1,18 @@
+keys:
+  - &users:
+    - &xaver-desktop age1d3ugypd39kvfaxmcjzzdkytddx5h0hghasejnqf3w9yxz6cctgsshjdvvc
+    - &xaver-laptop age18h0zvk6gjtja76eqdvjqfyfdpdm488m72q675xf6jkd2ert7dces4ze6fv
+    - &basti age1psstc5ve5jm2afnjy3qwex4h0r54030pf3nwzf5sp2eqtt02jf9q3jhw38
+  - &hosts:
+    - &vmpsateam09-01 age13kya0wl44hz9k4wk3us9e24pg2057akdx8whh988e4aezkf4vddqf60rvg
+    - &vmpsateam09-02 age1phyazr846chrj9saylkfhpkfwhj3zcze8za4zcwyfxl6uxej25wq7pal5z
+
+creation_rules:
+  - path_regex: ^secrets.yaml$
+    key_groups:
+      - age:
+          - *xaver-desktop
+          - *xaver-laptop
+          - *basti
+          - *vmpsateam09-01
+          - *vmpsateam09-02

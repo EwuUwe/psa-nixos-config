@@ -1,9 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixpkgs, ...}: let
+  outputs = {nixpkgs, ...} @ inputs: let
     systems = [
       "x86_64-linux"
     ];
@@ -16,9 +21,18 @@
           ./vmpsateam09-01/configuration.nix
           ./common
         ];
+        specialArgs = {
+          inherit inputs;
+        };
       };
       vmpsateam09-02 = nixpkgs.lib.nixosSystem {
-        modules = [./vmpsateam09-02/configuration.nix ./common];
+        modules = [
+          ./vmpsateam09-02/configuration.nix
+          ./common
+        ];
+        specialArgs = {
+          inherit inputs;
+        };
       };
     };
 
