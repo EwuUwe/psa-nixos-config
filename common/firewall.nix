@@ -17,7 +17,6 @@ in {
     '';
   };
 
-  networking.nameservers = ["131.159.254.1" "131.159.254.2"];
   networking.proxy = {
     default = "http://proxy.cit.tum.de:8080";
     noProxy = lib.concatStringsSep "," (
