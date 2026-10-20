@@ -1,0 +1,14 @@
+$TTL 86400
+@ IN SOA vmpsateam09-01.psa-team09.cit.tum.de. root.psa-team09.cit.tum.de. (
+    2026102001 ; Serial (YYYYMMDDNN)
+    7200       ; Refresh (2 hours)
+    3600       ; Retry (1 hour)
+    1209600    ; Expire (2 weeks)
+    3600       ; Negative Cache TTL (1 hour)
+)
+
+@                   IN  NS      vmpsateam09-01.psa-team09.cit.tum.de.
+
+@                   IN  A       192.168.9.1
+vmpsateam09-01      IN  A       192.168.9.1
+vmpsateam09-02      IN  A       192.168.9.2
