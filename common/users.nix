@@ -65,7 +65,10 @@
         {
           name = "Bastian Reich";
           group = "wheel";
-          sshKeys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJesDAbM93JVSKtYrk5b5MN/idRU2nIeD5WHDjwFpwGX bastian.reich@eposte.de"];
+          sshKeys = [
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJesDAbM93JVSKtYrk5b5MN/idRU2nIeD5WHDjwFpwGX bastian.reich@eposte.de"
+            "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOszEkR9pYaB+Dv6EG6T8rZZWaaeNOoV1k4IanNWwp0+ bastian.reich@eposte.de"
+          ];
         }
         {
           name = "Xaver Oswald";
