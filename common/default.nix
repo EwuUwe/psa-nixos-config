@@ -5,6 +5,7 @@ _: {
     ./nix.nix
     ./oomd.nix
     ./openssh.nix
+    ./sops.nix
     ./sudo.nix
     ./timezone.nix
     ./users.nix
