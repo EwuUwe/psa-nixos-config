@@ -2,6 +2,7 @@ _: {
   imports = [
     ./bootloader.nix
     ./networking.nix
+    ./nix.nix
     ./oomd.nix
     ./openssh.nix
     ./sudo.nix
