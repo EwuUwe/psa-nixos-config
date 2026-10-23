@@ -1,5 +1,6 @@
 _: {
   imports = [
+    ./assignment-test.nix
     ./bootloader.nix
     ./firewall.nix
     ./networking.nix
