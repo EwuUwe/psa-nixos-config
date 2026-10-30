@@ -59,6 +59,9 @@ in {
         # Allow DHCP discovery and renewal on the VirtualBox NAT network.
         ip daddr { 10.0.2.0/24, 255.255.255.255 } udp sport 68 udp dport 67 accept
 
+        # DHCP server replies, including broadcasts to unconfigured clients.
+        oifname "enp0s8" udp sport 67 udp dport 68 accept
+
         # Stateless replies from our HTTP(S) ports.
         ct state untracked tcp sport { 80, 443 } accept
 
