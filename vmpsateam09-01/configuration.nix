@@ -4,14 +4,6 @@ _: {
     ./services
   ];
 
-  networking.nameservers = [
-    "127.0.0.1"
-    "131.159.254.1"
-  ];
-  networking.search = [
-    "psa-team9.cit.tum.de"
-  ];
-
   nixpkgs.hostPlatform = "x86_64-linux";
   networking.hostName = "vmpsateam09-01";
 
