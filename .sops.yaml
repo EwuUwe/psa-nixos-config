@@ -16,3 +16,10 @@ creation_rules:
           - *basti
           - *vmpsateam09-01
           - *vmpsateam09-02
+  - path_regex: ^vmpsateam09-02/secrets.yaml$
+    key_groups:
+      - age:
+          - *xaver-desktop
+          - *xaver-laptop
+          - *basti
+          - *vmpsateam09-02
