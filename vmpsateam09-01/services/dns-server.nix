@@ -1,7 +1,7 @@
 {lib, ...}: let
   # DNS server IP for each team (index 1 to 9).
   teamDnsServers = [
-    "192.168.1.1" 
+    "192.168.1.1"
     "192.168.2.10"
     "192.168.3.1"
     "192.168.4.2"
@@ -28,7 +28,7 @@
       forward only;
       forwarders { ${teamDns team}; };
     };
-  '') (lib.range 1 8);
+  '') (lib.range 2 7);
 
   masterZone = file: {
     inherit file;
@@ -80,7 +80,7 @@ in {
       "psa-team9.cit.tum.de" = masterZone ./zones/psa-team9.cit.tum.de.zone;
       "9.168.192.in-addr.arpa" = masterZone ./zones/db.192.168.9;
 
-      # Secondary (slave) zones for neighboring teams in the ring (Team 8 and Team 1)
+      # Forward and reverse secondary zones for neighboring teams in the ring.
       "psa-team8.cit.tum.de" = {
         master = false;
         masters = [(teamDns 8)];
@@ -91,6 +91,18 @@ in {
         master = false;
         masters = [(teamDns 1)];
         file = "psa-team1.cit.tum.de.zone";
+      };
+
+      "8.168.192.in-addr.arpa" = {
+        master = false;
+        masters = [(teamDns 8)];
+        file = "db.192.168.8";
+      };
+
+      "1.168.192.in-addr.arpa" = {
+        master = false;
+        masters = [(teamDns 1)];
+        file = "db.192.168.1";
       };
     };
   };
