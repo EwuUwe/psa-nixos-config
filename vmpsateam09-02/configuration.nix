@@ -1,6 +1,8 @@
 _: {
   imports = [
     ./networking.nix
+    ./webserver.nix
+    ./services/database.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

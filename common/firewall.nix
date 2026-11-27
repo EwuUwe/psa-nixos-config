@@ -20,7 +20,9 @@ in {
   networking.proxy = {
     default = "http://proxy.cit.tum.de:8080";
     noProxy = lib.concatStringsSep "," (
-      ["localhost" "127.0.0.1" "::1"] ++ allowedNetworks
+      ["localhost" "127.0.0.1" "::1"]
+      ++ allowedNetworks
+      ++ map (team: ".psa-team${toString team}.cit.tum.de") (lib.range 1 9)
     );
   };
 
