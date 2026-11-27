@@ -43,15 +43,17 @@ in {
   services.bind = {
     enable = true;
 
-    listenOn = ["any"];
-    listenOnIpv6 = ["any"];
+    listenOn = ["127.0.0.1" "192.168.9.1"];
+    listenOnIpv6 = ["none"];
 
+    # Internal CIT/ITO nameservers.
     forwarders = [
       "131.159.254.1"
       "131.159.254.2"
     ];
     forward = "only";
 
+    # Client networks allowed to use recursive resolution and cached answers.
     cacheNetworks = [
       "127.0.0.0/8"
       "::1/128"
